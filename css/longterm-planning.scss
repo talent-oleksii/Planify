@@ -1,0 +1,108 @@
+@import "./util/_variables.scss";
+@import "./util/_mixins.scss";
+
+.longterm-planning {
+    grid-column: 3 / 6;
+    grid-row: 2 / 2;
+
+    //grid-column: 2 / 4;
+    //grid-row: 2 / 2;
+
+    background-color: $container-color-1;
+    position: relative;
+    top: 0;
+
+    .section-header {
+        @include gridSectionHeaderConfig();
+
+        .switch-year-section {
+            flex: 1;
+            @include flex();
+            
+            .next-year-btn {
+                @include backgroundImageContain(url("./../assets/svgs/arrow_right-white-18dp.svg"), center, center);
+            }
+            .previous-year-btn {
+                @include backgroundImageContain(url("./../assets/svgs/arrow_left-white-18dp.svg"), center, center);
+            }
+
+            .year-form {
+                @include flex();
+
+                $input-color: rgba(20, 20, 20, 0.5);
+
+                .year-input {
+                    background-color: $input-color;
+                    border: none;
+                    border-right: solid 1px whitesmoke;
+
+                    &::-webkit-inner-spin-button, 
+                    &::-webkit-outer-spin-button { 
+                      -webkit-appearance: none;
+                    }
+                    
+
+                }
+                .year-submit {
+                    background-color: $input-color;
+                    transition: background-color 0.2s ease;
+                    border: none;
+                    padding: 0 10px;
+
+                    &:hover {
+                        background-color: rgba(245, 245, 245, 0.3)
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+    /*
+    .img {
+        @include backgroundImageContain(url("./../assets/svgs/book-white-18dp.svg"), center, center);
+        width: 100%;
+        height: 50%;
+        opacity: 0.5;
+    }
+    article {
+        width: 100%;
+        height: 50%;
+        text-align: center;
+        margin-top: 100px;
+    }
+    */
+
+    .section-main {
+        width: 100%;
+        height: calc(100% - #{$header-height});
+        .longterm-goal-canvas {
+            width: 100%;
+            height: 200%;
+            position: relative;
+
+            .year {
+                padding: 15px;
+                width: 100%;
+                height: 100%;
+                @include flex();
+                position: absolute;
+
+                .year-section {
+                    width: 33.33%;
+                    height: 100%;
+                    padding: 15px;
+                    flex: 1;
+                    border-left: dashed 1px rgba(245, 245, 245, 0.5);
+                    border-right: dashed 1px rgba(245, 245, 245, 0.5);
+                }
+
+            }
+
+        }
+    }
+
+}

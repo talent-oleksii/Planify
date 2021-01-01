@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&display=swap');
+
+$background-gradient-color-1: #1c6eab;
+$background-gradient-color-2: #1e8c99;
+$background-color-1: rgb(50, 50, 50);
+$background-color-2: rgb(35, 35, 35);
+$background-color-3: rgb(60, 60, 60);
+$background-color-4: rgb(40, 40, 40);
+ 
+$shadow-color: rgba(20, 20, 20, 0.5);
+
+$hover-color: rgba(255, 255, 255, 0.5);
+$select-color: rgba(255, 255, 255, 0.3);
+$container-color-1: rgba(40, 40, 40, 0.4);
+$container-color-2: rgba(25, 25, 25, 0.4);
+$font-color: whitesmoke;
+
+$heading-1-font-size: 1.4em;
+$heading-2-font-size: 1.2em;
+$heading-3-font-size: 1.0em;
+$text-font-size: 1em;
+
+
+$task-widget-color: rgb(50, 50, 50);
+$not-important: rgb(22, 88, 31);
+$fairly-important: rgb(189, 162, 8);
+$important: indianred;
+$very-important: rgb(100, 22, 22);
+
+$header-background: transparent;
+$big-border-radius: 0px;
+$small-border-radius: 0px;
+$header-height: 60px;
+$header-font-color: whitesmoke;
+$header-font-family: "Josefin Sans";
+$header-font-weight: 100;
+$header-padding: 0 20px;
+
+// planning-section variables
+$planning-outer-padding: 20px;
+$planning-grid-gap: 20px;
+
+// titlebar variables
+$titlebar-height: 25px;
+$window-nav-width: 200px;
+
+// toolbar variables
+$toolbar-height: 0px;
+
+// calendar variables
+
+// task-canvas variables
+$task-canvas-subsection-height: 60px;
+
+// note-canvas variables
+
+// longterm-canvas variables
+
+// add-task-section variables
+
+// navigation menu variables
+$navigation-size: 40px;
+
+// extra-section variables
+$extra-section-btn-width: 150px;
+$extra-section-btn-height: 3vh;
+
+$extra-section-header-height: 50px;
+
+$extra-section-header-color: rgb(50, 50, 50);
+
+
+// custom alert variables:
+$custom-alert-main-width: 40%;

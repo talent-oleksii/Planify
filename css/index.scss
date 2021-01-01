@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+@import "./util/_variables.scss";
+@import "./util/_mixins.scss";
+
+// TODO: add tootips and shortcuts
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    color: $font-color;
+
+    &::selection {
+        background-color: transparent;
+    }
+
+}
+*:focus {
+    outline: 0;
+}
+*::spelling-error {
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6, p, img {
+    cursor: default;
+}
+
+body, html {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+.btn {
+    cursor: pointer;
+}
+.add-btn {
+    @include backgroundImageContain(url("./../assets/svgs/add-white-18dp.svg"), center, center);
+}
+.edit-btn {
+    @include backgroundImageContain(url("./../assets/svgs/edit-btn.svg"), center, center);
+}
+.delete-btn, .remove-all-btn {
+    @include backgroundImageContain(url("./../assets/svgs/delete-btn.svg"), center, center);
+}
+
+
+.app-content {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    .content-wrapper {
+        width: 100%;
+        height: auto;
+        position: relative;
+        top: calc(#{$titlebar-height} + #{$toolbar-height});
+    }
+
+}
+
+.navigation-btn {
+    background-color: rgb(30, 30, 30);
+    position: fixed;
+    right: $planning-outer-padding;
+    bottom: $planning-outer-padding;
+    width: $navigation-size;
+    height: $navigation-size;
+    z-index: 99999;
+    @include backgroundImageCustom(url("./../assets/svgs/menu.svg"), center, center, 90%);
+
+    .item {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        opacity: 0;
+        background-color: inherit;
+        display: none;
+    }
+
+    .trash-can-btn {
+        @include backgroundImageCustom(url("./../assets/svgs/delete-btn.svg"), center, center, 80%);    
+    }
+    .settings {
+        @include backgroundImageCustom(url("./../assets/svgs/settings.svg"), center, center, 70%);
+    }
+    .exit-menu {
+        @include backgroundImageCustom(url("./../assets/svgs/close-white-18dp.svg"), center, center, 80%);
+    }
+
+}
+
+.planning {
+    @include backgroundImageCover(none, center, 100%);
+    //background-color: $background-color-1;
+
+    width: 100%;
+    height: calc(100vh - #{$titlebar-height} - #{$toolbar-height});
+
+    display: grid;
+
+    // don't forget to include the longtermcavas somewhere
+    grid-template-areas:
+        "calendar . .          . .          ."
+        "calendar . taskcanvas . notecanvas ."
+        "calendar . .          . .          .";
+
+    /*
+    grid-template-areas:
+        "calendar taskcanvas notecanvas"
+        "calendar taskcanvas notecanvas"
+        "calendar taskcanvas notecanvas";
+    */
+
+    grid-template-columns: 25% 5% 30% 5% 30% 5%;
+    grid-template-rows: 5% 90% 5%;
+
+    //grid-template-columns: 0.33333fr 0.33333fr 0.33333fr;
+    //grid-template-rows: 0.333fr 0.333fr 0.333fr;
+
+    position: relative;
+    top: 0;
+
+    .grid-section {
+        border-radius: $big-border-radius;
+        //background-color: $container-color;
+        width: 100%;
+        height: 100%;
+    }
+
+}
+
+.custom-alert {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 999999;
+    top: $titlebar-height;
+    left: 0;
+
+    .custom-alert-main {
+        width: $custom-alert-main-width;
+        height: auto;
+        padding: 25px;
+        position: relative;
+        top: 100px;
+        background-color: black;
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
+
+        // TODO: animation
+        animation: enterAnimation 0.5s ease;
+        box-shadow: 3px 3px 5px 5px $shadow-color;
+
+        @include flex();
+
+        .button-section {
+            button {
+                background-color: rgb(40, 40, 40);
+                padding: 10px;
+                margin: 5px;
+                box-shadow: none;
+                transition: background-color 0.2s ease, box-shadow 0.2s ease;
+                border-radius: 2px;
+            }
+
+            .confirm-btn:hover {
+                background-color: rgb(0, 128, 0);
+                box-shadow: 0px 0px 1px 1px $shadow-color,
+                            0px 0px 2px 2px rgb(0, 128, 0);
+            }
+            .deny-btn:hover {
+                background-color: rgb(205, 92, 92);
+                box-shadow: 0px 0px 1px 1px $shadow-color,
+                            0px 0px 2px 2px rgb(205, 92, 92);
+            }
+        }
+
+    }
+}
+
+@keyframes enterAnimation {
+    0% {
+        left: -1 * $custom-alert-main-width;
+    }
+    100% {
+        left: 0;
+    }
+}
+

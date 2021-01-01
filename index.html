@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>DayWay</title>
+
+    <!-- css -->
+    <link type="text/css" rel="stylesheet" href="./css/index.css">
+    <link type="text/css" rel="stylesheet" href="./css/titlebar.css">
+    <link type="text/css" rel="stylesheet" href="./css/taskcanvas.css">
+    <link type="text/css" rel="stylesheet" href="./css/calendar.css">
+    <link type="text/css" rel="stylesheet" href="./css/longterm-planning.css">
+    <link type="text/css" rel="stylesheet" href="./css/notecanvas.css">
+    <link type="text/css" rel="stylesheet" href="./css/scrollbar-styles.css">
+    <link type="text/css" href="./node_modules/overlayscrollbars/css/OverlayScrollbars.css" rel="stylesheet">
+    <link type="text/css" href="./node_modules/jquery-ui-dist/jquery-ui.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <header class="header">
+        <section class="titlebar">
+            <div class="title">
+                <div class="logo"></div>
+                <h4>Planify</h4>
+            </div>
+            <div class="window-nav">
+                <div class="minimize nav-button"></div>
+                <div class="maximize nav-button"></div>
+                <div class="exit nav-button"></div>
+            </div>
+            <div class="user-draggable-region">
+            </div>
+        </section>
+    </header>
+    <main class="app-content">
+
+        <div class="content-wrapper">
+
+            <section class="planning subsection">
+                <section class="calendar-section grid-section">
+                    <header class="calendar-header">
+                        <h1>Calendar</h1>
+                        <div class="switch-mode-btn header-btn">
+                        </div>
+                    </header>
+                    <main class="calendar-wrapper">
+                        <div class="calendar-week-wrapper custom-scrollbar">
+                            <div class="expand-forward btn" title="expand to next week"></div>
+                                <div class="week-container">
+                                </div>
+                            <div class="expand-backward btn" title="expand to previous week"></div>
+                        </div>
+                    </main>
+                </section>
+    
+                <section class="task-canvas grid-section">
+                    <section class="unfinished-tasks tasks-section">
+                        <header class="section-header expand-btn" data-expand-section="unfinished">
+                            <h1 class="heading">Unfinished:</h1>
+                            <div class="add-task header-btn add-btn" title="add a task"></div>
+                        </header>
+                        <main class="section-main custom-scrollbar">
+                            <div class="tasks-container">
+                            </div>
+                        </main>
+                    </section>
+                    <section class="finished-tasks tasks-section">
+                        <header class="section-header expand-btn" data-expand-section="finished">
+                            <h1 class="heading">Finished:</h1>
+                            <div class="remove-all-tasks header-btn" title="remove all tasks"></div>
+                        </header>
+                        <main class="section-main custom-scrollbar">
+                            <div class="tasks-container">
+                            </div>
+                        </main>
+                    </section>
+                </section>
+    
+                <section class="note-canvas grid-section">
+                    <header class="section-header">
+                        <h1>Notes / Reminders</h1>
+                        <div class="add-note header-btn add-btn" title="add a note">
+                        </div>
+                        <div class="remove-all-notes header-btn delete-btn" title="remove all notes">
+                        </div>
+                    </header>
+                    <main class="section-main x-y-scrollbar">
+                        <div class="note-canvas-content-wrapper">
+                        </div>
+                    </main>
+                </section>
+    
+                <section class="longterm-planning grid-section">
+                    <header class="section-header">
+                        <h1>Longterm Goals</h1>
+                        <div class="add-goal header-btn add-btn" title="add a longterm goal">
+                        </div>
+                        <div class="remove-all-goals header-btn delete-btn" title="remove all goals">
+                        </div>
+                        <div class="switch-year-section">
+                            <div class="previous-year-btn header-btn" title="previous year">
+                            </div>
+                            <form class="year-form">
+                                <input name="yearInput" type="number" class="year-input" required>
+                                <input type="submit" class="year-submit" value="submit">
+                            </form>
+                            <div class="next-year-btn header-btn" title="next year">
+                            </div>
+                        </div>
+                    </header>
+                    <main class="section-main x-y-scrollbar">
+                        <div class="longterm-goal-canvas">
+
+                        </div>
+                    </main>
+                </section>
+
+            </section>
+
+        </div>
+
+    </main>
+
+    <!-- js -->
+    <script type="text/javascript" src="./node_modules/overlayscrollbars/js/jquery.overlayScrollbars.js"></script>
+    <script type="text/javascript" src="./node_modules/sortablejs/Sortable.min.js"></script>
+    <script type="text/javascript" src="./node_modules/jquery-ui-dist/external/jquery/jquery.js"></script>
+    <script type="text/javascript">
+        const $ = jQuery = require("jquery");
+        require("jquery-ui-dist/jquery-ui");
+        const moment = require("moment");
+    </script>
+    <script type="text/javascript">
+        document.execCommand("defaultParagraphSeparator", false, null);
+    </script>
+    <script type="text/javascript" src="./js/util.js"></script>
+    <script type="text/javascript" src="./js/jsonclasses.js"></script>
+    <script type="text/javascript" src="./js/appclasses/widgetObject.js"></script>
+    <script type="text/javascript" src="./js/appclasses/userMadeWidgetObject.js"></script>
+    <script type="text/javascript" src="./js/appclasses/alert.js"></script>
+    <script type="text/javascript" src="./js/appclasses/yearObject.js"></script>
+    <script type="text/javascript" src="./js/appclasses/monthObject.js"></script>
+    <script type="text/javascript" src="./js/appclasses/weekObject.js"></script>
+    <script type="text/javascript" src="./js/appclasses/dateObject.js"></script>
+    <script type="text/javascript" src="./js/appclasses/dateObjectStandard.js"></script>
+    <script type="text/javascript" src="./js/appclasses/taskObject.js"></script>
+    <script type="text/javascript" src="./js/appclasses/noteObject.js"></script>
+    <script type="text/javascript" src="./js/appclasses/longtermGoalObject.js"></script>
+    <script type="text/javascript" src="./js/appclasses/appObject.js"></script>
+    <script type="text/javascript" src="./renderer.js"></script>
+    <script type="text/javascript" src="./js/events.js"></script>
+
+</body>
+</html>
+

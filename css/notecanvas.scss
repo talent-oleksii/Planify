@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import "./util/_variables.scss";
+@import "./util/_mixins.scss";
+
+.note-canvas {
+    grid-area: notecanvas;
+
+    position: relative;
+    top: -200px;
+    opacity: 0;
+
+    background-color: $container-color-2;
+
+    .section-header {
+        @include gridSectionHeaderConfig();
+    }
+    .section-main {
+
+        width: 100%;
+        height: calc(100% - #{$header-height});
+        overflow: auto;
+        &:-webkit-scrollbar {
+            display: none;
+        }
+
+        .note-canvas-content-wrapper {
+
+            width: 100%;
+            height: 300%;
+            padding: 25px;
+
+        }
+
+    }
+
+}
+
+.note {
+
+    width: 150px;
+    height: auto;
+    background-color: rgb(50, 50, 50);
+    //box-shadow: 5px 5px 4px 0px rgba(20, 20, 20, 0.5);
+    cursor: grab;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    .note-content-wrapper {
+
+        padding: 10px;
+        width: 100%;
+        height: auto;
+
+        [contenteditable="true"] {
+            cursor: text;
+
+            &::selection, & *::selection {
+                background-color: rgba(100, 100, 100, 0.5)
+            }
+            &:empty::before {
+                content: attr(placeholder);
+                pointer-events: none;
+                display: block;
+                color: rgba(200, 200, 200, 0.9);
+            }
+        }
+        .note-header {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .note-heading-text {
+                width: 60%;
+                flex: 2;
+                font-size: 0.9em;
+                font-family: "Indie Flower", cursive;
+                //word-wrap: break-word;
+            }
+
+            .tools {
+
+                flex: 1;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .tool {
+                    flex: 1;
+
+                    width: 20px;
+                    height: 20px;
+
+                    opacity: 0.5;
+                    transition: opacity 0.2s ease;
+
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+
+            }
+
+        }
+        .note-main {
+            width: 100%;
+
+            .note-content-text, .note-content-text * {
+                width: auto;
+                height: auto;
+                font-size: 0.9em;
+                font-family: "Indie Flower", cursive;
+                word-wrap: break-word;
+                overflow: auto;
+                margin-top: 10px;
+                white-space: pre-line;
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+
+            }
+            .note-content-text * {
+                margin: 0;
+                font-size: 1em;
+            }
+
+        }
+
+    }
+
+    .color-input {
+    
+        width: 100%;
+        height: auto;
+        background-color: rgb(50, 50, 50);
+        padding: 5px;
+
+        .color-label {
+            font-family: "indie Flower", cursive;
+        }
+        .color-picker {
+            background-color: rgb(50, 50, 50);
+            display: block;
+            width: 100%;
+            border: 0;
+            padding: 0;
+        }
+
+    }
+
+}

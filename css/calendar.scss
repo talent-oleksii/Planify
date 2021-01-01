@@ -1,0 +1,93 @@
+@import "./util/_variables.scss";
+@import "./util/_mixins.scss";
+
+.calendar-section {
+    grid-area: calendar;
+    z-index: 1;
+    background-color: $background-color-2;
+
+    .calendar-header {
+        @include gridSectionHeaderConfig();
+
+        .switch-mode-btn {
+            @include backgroundImageContain(url("./../assets/svgs/view_module-white-18dp.svg"), center, center);
+        }
+
+    }
+
+    .calendar-wrapper {
+        height: calc(100% - #{$header-height});
+
+        .btn {
+            width: 25px;
+            height: 25px;
+            background-color: transparent;
+            display: block;
+            margin: auto;
+            transition: background-color 0.3s ease, width 0.3s ease;
+
+            &:hover {
+                background-color: $hover-color;
+            }
+
+        }
+        .expand-backward {
+            @include backgroundImageContain(url("./../assets/svgs/arrow_drop_down-white-18dp.svg"), center, center);
+            border-radius: 5px;
+        }
+        .expand-forward {
+            @include backgroundImageContain(url("./../assets/svgs/arrow_drop_up-white-18dp.svg"), center, center);
+            border-radius: 5px;
+        }
+
+        .calendar-week-wrapper {
+            width: auto;
+            height: 100%;
+
+            .week-container {
+                width: 100%;
+                height: auto;
+
+                .week {
+                    height: 80%;
+
+                    h1 {
+                        font-size: $heading-2-font-size;
+                        margin: 30px 50px 20px 50px;
+                    }
+
+                    .date-selector {
+                        padding: 20px;
+                        width: 60%;
+                        height: auto;
+                        min-height: 100px;
+                        display: inline-table;
+                        border-bottom: 1px solid rgba(145, 145, 145, 0.5);
+                        margin: 10px 20%;
+                        
+                        transition: background-color 0.3s ease;
+                        &:hover {
+
+                            p {
+                                transform: translateY(-10px);
+                            }
+
+                        }
+
+                        p {
+                            display: table-cell;
+                            vertical-align: middle;
+                            font-size: $text-font-size;
+                            transition: transform 0.3s ease;
+                            cursor: pointer;
+                        }
+
+                    }
+
+                }
+            }
+
+        }
+
+    }
+}

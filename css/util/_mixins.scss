@@ -1,0 +1,67 @@
+@import "./util/_variables.scss";
+
+@mixin backgroundImageContain($url, $xPos, $yPos) {
+    background-image: $url;
+    background-position: $xPos $yPos;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+@mixin backgroundImageCover($url, $xPos, $yPos) {
+    background-image: $url;
+    background-position: $xPos $yPos;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+@mixin backgroundImageCustom($url, $xPos, $yPos, $size) {
+    background-image: $url;
+    background-position: $xPos $yPos;
+    background-repeat: no-repeat;
+    background-size: $size;
+}
+
+@mixin gridSectionHeaderConfig($custom-size: none) {
+    width: 100%;
+    height: $header-height;
+    padding: $header-padding;
+    background: $header-background;
+
+    display: flex;
+    align-items: center;
+    justify-content: left;
+
+    h1 {
+        font-size: $heading-1-font-size;
+        font-family: $header-font-family, serif;
+        font-weight: $header-font-weight;
+        color: $header-font-color;
+    }
+
+    .header-btn {
+
+        @if $custom-size == none {
+            width: 20px;
+            height: 20px;
+        } @else {
+            width: $custom-size;
+            height: $custom-size;
+        }
+
+        margin-left: 20px;
+        transition: background-color 0.2s ease;
+        border-radius: 2px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $hover-color;
+        }
+
+    }
+
+}
+
+@mixin flex($justify: space-evenly, $align: center) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}

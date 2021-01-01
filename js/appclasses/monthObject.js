@@ -1,0 +1,3 @@
+class MonthObject extends WidgetObject {
+
+}
