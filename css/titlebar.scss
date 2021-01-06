@@ -14,12 +14,12 @@
     .titlebar {
         width: 100%;
         height: $titlebar-height;
-        background-color: $background-color-1;
-        
+        //background-color: $background-color-1;
+        background-color: transparent;
         display: flex;
 
         padding: 0 0 0 10px;
-
+        
         .title {
             height: 100%;
             width: auto;

@@ -78,7 +78,6 @@ button {
   width: 100%;
   height: auto;
   position: relative;
-  top: calc(25px + 0px);
 }
 
 .navigation-btn {
@@ -132,7 +131,7 @@ button {
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
-  height: calc(100vh - 25px - 0px);
+  height: 100vh;
   display: grid;
   grid-template-areas: "calendar . .          . .          ." "calendar . taskcanvas . notecanvas ." "calendar . .          . .          .";
   /*
@@ -142,7 +141,7 @@ button {
         "calendar taskcanvas notecanvas";
     */
   grid-template-columns: 25% 5% 30% 5% 30% 5%;
-  grid-template-rows: 5% 90% 5%;
+  grid-template-rows: calc(5% + 25px) calc(90% - 25px) 5%;
   position: relative;
   top: 0;
 }

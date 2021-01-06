@@ -4,6 +4,7 @@
   grid-area: calendar;
   z-index: 1;
   background-color: #232323;
+  padding-top: 25px;
 }
 
 .calendar-section .calendar-header {

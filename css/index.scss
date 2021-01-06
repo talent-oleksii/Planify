@@ -3,8 +3,6 @@
 @import "./util/_variables.scss";
 @import "./util/_mixins.scss";
 
-// TODO: add tootips and shortcuts
-
 * {
     padding: 0;
     margin: 0;
@@ -69,7 +67,6 @@ button {
         width: 100%;
         height: auto;
         position: relative;
-        top: calc(#{$titlebar-height} + #{$toolbar-height});
     }
 
 }
@@ -110,7 +107,7 @@ button {
     //background-color: $background-color-1;
 
     width: 100%;
-    height: calc(100vh - #{$titlebar-height} - #{$toolbar-height});
+    height: 100vh;
 
     display: grid;
 
@@ -128,7 +125,7 @@ button {
     */
 
     grid-template-columns: 25% 5% 30% 5% 30% 5%;
-    grid-template-rows: 5% 90% 5%;
+    grid-template-rows: calc(5% + #{$titlebar-height}) calc(90% - #{$titlebar-height}) 5%;
 
     //grid-template-columns: 0.33333fr 0.33333fr 0.33333fr;
     //grid-template-rows: 0.333fr 0.333fr 0.333fr;
