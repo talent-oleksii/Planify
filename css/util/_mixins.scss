@@ -1,4 +1,4 @@
-@import "./util/_variables.scss";
+@import "./_variables.scss";
 
 @mixin backgroundImageContain($url, $xPos, $yPos) {
     background-image: $url;
