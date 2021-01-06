@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&display=swap');
+@font-face {
+  font-family: "Josefin Sans";
+  src: url("./../../assets/fonts/Josefin_Sans/static/JosefinSans-SemiBold.ttf");
+}
 
 $background-gradient-color-1: #1c6eab;
 $background-gradient-color-2: #1e8c99;

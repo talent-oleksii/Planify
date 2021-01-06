@@ -1,6 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
 @import "./util/_variables.scss";
 @import "./util/_mixins.scss";
+
+@font-face {
+    font-family: "Gaegu";
+    src: url("./../assets/fonts/Gaegu/Gaegu-Regular.ttf")
+}
 
 .note-canvas {
     grid-area: notecanvas;
@@ -37,7 +42,10 @@
 
 .note {
 
-    width: 150px;
+    $font-size: 1.3em;
+    $font-family: "Gaegu", cursive;
+
+    width: 200px;
     height: auto;
     background-color: rgb(50, 50, 50);
     //box-shadow: 5px 5px 4px 0px rgba(20, 20, 20, 0.5);
@@ -75,9 +83,8 @@
             .note-heading-text {
                 width: 60%;
                 flex: 2;
-                font-size: 0.9em;
-                font-family: "Indie Flower", cursive;
-                //word-wrap: break-word;
+                font-size: $font-size;
+                font-family: $font-family;
             }
 
             .tools {
@@ -110,8 +117,8 @@
             .note-content-text, .note-content-text * {
                 width: auto;
                 height: auto;
-                font-size: 0.9em;
-                font-family: "Indie Flower", cursive;
+                font-size: $font-size;
+                font-family: $font-family;
                 word-wrap: break-word;
                 overflow: auto;
                 margin-top: 10px;
@@ -132,15 +139,11 @@
     }
 
     .color-input {
-    
         width: 100%;
         height: auto;
         background-color: rgb(50, 50, 50);
         padding: 5px;
 
-        .color-label {
-            font-family: "indie Flower", cursive;
-        }
         .color-picker {
             background-color: rgb(50, 50, 50);
             display: block;

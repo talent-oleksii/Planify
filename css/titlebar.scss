@@ -23,20 +23,12 @@
         .title {
             height: 100%;
             width: auto;
-            display: flex;
-            align-items: center;
-            justify-items: center;
 
             .logo {
                 height: 100%;
-                width: $titlebar-height - 10px;
+                width: $titlebar-height - 5px;
                 @include backgroundImageContain(url("./../assets/svgs/logo.svg"), center, center);
                 margin-right: 10px;
-            }
-
-            h4 {
-                font-family: "Raleway", sans-serif;
-                font-weight: 100;
             }
 
         }
