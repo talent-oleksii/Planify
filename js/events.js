@@ -185,7 +185,7 @@ function noteCanvasEvents() {
 
     $(".remove-all-notes").on("click", function() {
 
-        new ConfirmAlert("Confirm Delete?", "Are you sure you want to delete these widgets?", () => {
+        new ConfirmAlert("Confirm Delete?", "Are you sure you want to delete the availabe widgets permanently?", () => {
             for (let noteObject of DateObjectStandard.activeDateObject.noteObjects) {
                 noteObject.deleteSelf();
             }
@@ -230,7 +230,7 @@ function longtermCanvasEvents() {
 
     $(".remove-all-goals").on("click", function() {
 
-        new ConfirmAlert("Confirm Delete?", "Are you sure you want to delete these widgets?", () => {
+        new ConfirmAlert("Confirm Delete?", "Are you sure you want to delete the available widgets permanently?", () => {
             for (let noteObject of YearObject.activeYearObject.goalObjects) {
                 noteObject.deleteSelf();
             }
@@ -506,8 +506,6 @@ function toggleDeleted() {
     }
 
 }
-
-
 function miscEvents() {
 
     // menu events:
@@ -587,15 +585,14 @@ function miscEvents() {
 
 }
 
-
 function handleEvents() {
 
+    miscEvents();
     titlebarEvents();
     calendarEvents();
     taskCanvasEvents();
     noteCanvasEvents();
     longtermCanvasEvents();
     addTaskEvents();
-    miscEvents();
 
 }

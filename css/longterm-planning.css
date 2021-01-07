@@ -4,20 +4,6 @@
   background-color: rgba(40, 40, 40, 0.4);
   position: relative;
   top: 0;
-  /*
-    .img {
-        @include backgroundImageContain(url("./../assets/svgs/book-white-18dp.svg"), center, center);
-        width: 100%;
-        height: 50%;
-        opacity: 0.5;
-    }
-    article {
-        width: 100%;
-        height: 50%;
-        text-align: center;
-        margin-top: 100px;
-    }
-    */
 }
 
 .longterm-planning .section-header {
@@ -80,7 +66,7 @@
 .longterm-planning .section-header .switch-year-section .year-form .year-input {
   background-color: rgba(20, 20, 20, 0.5);
   border: none;
-  border-right: solid 1px whitesmoke;
+  text-align: center;
 }
 
 .longterm-planning .section-header .switch-year-section .year-form .year-input::-webkit-inner-spin-button, .longterm-planning .section-header .switch-year-section .year-form .year-input::-webkit-outer-spin-button {
@@ -92,6 +78,7 @@
   transition: background-color 0.2s ease;
   border: none;
   padding: 0 10px;
+  margin: 10px;
 }
 
 .longterm-planning .section-header .switch-year-section .year-form .year-submit:hover {
