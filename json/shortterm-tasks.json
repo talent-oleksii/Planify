@@ -7,5 +7,14 @@
             "endTime": "",
             "finished": false
         }
+    },
+    "07-01-2021": {
+        "task-1": {
+            "taskHeading": "",
+            "taskDescription": "",
+            "startTime": "",
+            "endTime": "",
+            "finished": false
+        }
     }
 }

@@ -2,11 +2,6 @@
 @import "./util/_variables.scss";
 @import "./util/_mixins.scss";
 
-@font-face {
-    font-family: "Gaegu";
-    src: url("./../assets/fonts/Gaegu/Gaegu-Regular.ttf")
-}
-
 .note-canvas {
     grid-area: notecanvas;
 

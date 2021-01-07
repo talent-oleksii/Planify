@@ -1,6 +1,9 @@
 @import "./util/_variables.scss";
 @import "./util/_mixins.scss";
 
+
+// fonts
+
 @font-face {
     font-family: "Poppins-light";
     src: url("./../assets/fonts/Poppins/Poppins-Light.ttf");
@@ -8,6 +11,14 @@
 @font-face {
     font-family: "Poppins-bold";
     src: url("./../assets/fonts/Poppins/Poppins-SemiBold.ttf");
+}
+@font-face {
+    font-family: "Josefin Sans";
+    src: url("./../assets/fonts/Josefin_Sans/static/JosefinSans-SemiBold.ttf")
+}
+@font-face {
+    font-family: "Gaegu";
+    src: url("./../assets/fonts/Gaegu/Gaegu-Regular.ttf")
 }
 
 * {

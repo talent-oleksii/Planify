@@ -1,13 +1,3 @@
-@font-face {
-  font-family: "Josefin Sans";
-  src: url("./../../assets/fonts/Josefin_Sans/static/JosefinSans-SemiBold.ttf");
-}
-
-@font-face {
-  font-family: "Josefin Sans";
-  src: url("./../../assets/fonts/Josefin_Sans/static/JosefinSans-SemiBold.ttf");
-}
-
 .calendar-section {
   grid-area: calendar;
   z-index: 1;
