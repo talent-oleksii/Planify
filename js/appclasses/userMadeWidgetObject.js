@@ -55,7 +55,7 @@ class UserMadeWidgetObject extends WidgetObject {
     }
 
     deleteBtnClickEvent() {
-        new ConfirmAlert("Confirm Delete?", "Are you sure you want to delete this widget?", () => this.deleteSelf()).placeInDom();
+        new ConfirmAlert("Confirm Delete?", "Are you sure you want to delete this widget permanently?", () => this.deleteSelf()).placeInDom();
     }
 
     deleteSelf() {
@@ -64,7 +64,7 @@ class UserMadeWidgetObject extends WidgetObject {
 
         this._objectDomElement.stop().animate({
             "opacity": 0,
-            "height": `${this._objectDomElement.innerHeight() * 0.5}px`
+            "height": 0
         }, 400, () => {
             this._objectDomElement.remove();
             let identifier = this._parentObject.identifier;

@@ -146,7 +146,7 @@ function taskCanvasEvents() {
 
     $(".remove-all-tasks").on("click", function() {
     
-        new ConfirmAlert("Confirm Delete?", "Are you sure you want to delete these widgets?", () => {
+        new ConfirmAlert("Confirm Delete?", "Are you sure you want to delete the available widgets permanently?", () => {
             for (let taskObject of DateObjectStandard.activeDateObject.taskObjects) {
                 if (taskObject.finished) {
                     taskObject.deleteSelf();

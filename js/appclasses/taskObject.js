@@ -176,9 +176,7 @@ class TaskObject extends UserMadeWidgetObject {
                 "height": 0,
                 "margin": "0px"
             }, 200, () => {
-
                 this.attachToSibling(taskSection, parentTask);
-
             });
 
         });
