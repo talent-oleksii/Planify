@@ -508,24 +508,6 @@ function toggleDeleted() {
 }
 function miscEvents() {
 
-    // menu events:
-
-    /*
-    $(".navigation-btn").on("click", function(e) {
-        let child = $(this).children();
-        navigationAnimation(child);
-
-    });
-    $(".exit-menu").on("click", function(e) {
-        e.stopPropagation();
-        navCloseAnimation($(this));
-    });
-
-    $(".trash-can-btn").on("click", function(e) {
-        e.stopPropagation();
-        toggleDeleted();
-    });
-    */
     $(".trash-can header .scroll-subsection-btn").each(function() {
         
         $(this).on("click", function() {

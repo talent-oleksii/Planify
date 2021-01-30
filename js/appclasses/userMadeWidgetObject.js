@@ -28,8 +28,8 @@ class UserMadeWidgetObject extends WidgetObject {
         this._editableElements.forEach(element => {
 
             element.on("input", () => {
-
                 const value = element.html()
+
 
                 const jsonRepresent = element.attr(UserMadeWidgetObject.jsonRepresentDataTag);
 
@@ -38,6 +38,13 @@ class UserMadeWidgetObject extends WidgetObject {
                 });
                 this.updateInJson()
 
+            });
+
+            // prevents styling when pasting text from e.g. websites
+            element[0].addEventListener("paste", function(e) {
+                e.preventDefault();
+                let text = e.clipboardData.getData("text/plain");
+                document.execCommand("insertText", false, text);
             });
             
             // preventing line breaks when pressing enter (only applied on elements with contentbreakable set to false)
